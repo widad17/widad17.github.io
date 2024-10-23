@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name - Portfolio</title>
+    <title>Widad Farhat - Portfolio</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
@@ -15,12 +15,13 @@
                 <div class="flex space-x-7">
                     <div>
                         <a href="#" class="flex items-center py-4">
-                            <span class="font-semibold text-gray-500 text-lg">Your Name</span>
+                            <span class="font-semibold text-gray-500 text-lg">Widad Farhat</span>
                         </a>
                     </div>
                 </div>
                 <div class="flex items-center space-x-6">
                     <a href="#about" class="py-4 px-2 text-gray-500 font-semibold hover:text-blue-500">About</a>
+                    <a href="#experience" class="py-4 px-2 text-gray-500 font-semibold hover:text-blue-500">Experience</a>
                     <a href="#projects" class="py-4 px-2 text-gray-500 font-semibold hover:text-blue-500">Projects</a>
                     <a href="#skills" class="py-4 px-2 text-gray-500 font-semibold hover:text-blue-500">Skills</a>
                     <a href="#contact" class="py-4 px-2 text-gray-500 font-semibold hover:text-blue-500">Contact</a>
@@ -33,8 +34,8 @@
     <div class="bg-white py-20">
         <div class="max-w-6xl mx-auto px-4">
             <div class="text-center">
-                <h1 class="text-4xl font-bold text-gray-800 mb-4">Your Name</h1>
-                <p class="text-xl text-gray-600">Software Developer & UX Designer</p>
+                <h1 class="text-4xl font-bold text-gray-800 mb-4">Widad Farhat</h1>
+                <p class="text-xl text-gray-600">Machine Learning Graduate Student & AI Researcher</p>
             </div>
         </div>
     </div>
@@ -43,68 +44,130 @@
     <section id="about" class="py-20 bg-gray-50">
         <div class="max-w-6xl mx-auto px-4">
             <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">About Me</h2>
-            <div class="flex flex-col md:flex-row items-center justify-between">
-                <div class="md:w-1/2 mb-8 md:mb-0">
-                    <img src="/api/placeholder/400/400" alt="Profile" class="rounded-full mx-auto w-64 h-64 object-cover shadow-lg">
+            <div class="text-gray-600 leading-relaxed max-w-3xl mx-auto">
+                <p>
+                    Currently pursuing a Master's degree in Machine Learning at KTH Royal Institute of Technology, 
+                    with a strong foundation in Computer Engineering from INSA Lyon and Mathematics from Université Claude Bernard Lyon 1. 
+                    Passionate about AI research and development, with experience in both academic and professional settings.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="py-20">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Experience</h2>
+            <div class="space-y-8">
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-xl font-bold text-gray-800">AI Researcher</h3>
+                    <p class="text-gray-600">KTH AI Society | October 2024 - Present</p>
+                    <ul class="list-disc ml-6 mt-4 text-gray-600">
+                        <li>Conduct research on cutting-edge AI trends and developments</li>
+                        <li>Collaborate with peers on innovative AI projects</li>
+                    </ul>
                 </div>
-                <div class="md:w-1/2 md:pl-8">
-                    <p class="text-gray-600 leading-relaxed">
-                        [Your compelling introduction goes here. Talk about your background, interests, and what drives you in technology and design.]
-                    </p>
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-xl font-bold text-gray-800">Fullstack Developer Intern</h3>
+                    <p class="text-gray-600">Komodal | April 2024 - September 2024</p>
+                    <ul class="list-disc ml-6 mt-4 text-gray-600">
+                        <li>Developed a comprehensive web application from scratch</li>
+                        <li>Implemented both front-end and back-end components</li>
+                    </ul>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg p-6">
+                    <h3 class="text-xl font-bold text-gray-800">AI Development and Data Analysis Intern</h3>
+                    <p class="text-gray-600">Eden AI | June 2023 - August 2023</p>
+                    <ul class="list-disc ml-6 mt-4 text-gray-600">
+                        <li>Contributed to the development of AI features for specialized solutions</li>
+                        <li>Conducted user clustering analyses to derive actionable insights</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-20">
+    <section id="projects" class="py-20 bg-gray-50">
         <div class="max-w-6xl mx-auto px-4">
             <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Projects</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Project Card 1 -->
                 <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                    <img src="/api/placeholder/400/300" alt="Project 1" class="w-full h-48 object-cover">
                     <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Project Name</h3>
-                        <p class="text-gray-600 mb-4">Brief description of the project and your role in it.</p>
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Anime Recommendation App with Chatbot</h3>
+                        <p class="text-gray-600 mb-4">Developed app using content-based and collaborative filtering with OpenAI LLM chatbot integration</p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">React</span>
-                            <span class="px-3 py-1 bg-green-100 text-green-600 rounded-full text-sm">Node.js</span>
+                            <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">Python</span>
+                            <span class="px-3 py-1 bg-green-100 text-green-600 rounded-full text-sm">ML</span>
+                            <span class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-sm">NLP</span>
                         </div>
                     </div>
                 </div>
-                <!-- Add more project cards as needed -->
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Audio Fingerprinting</h3>
+                        <p class="text-gray-600 mb-4">Improved Shazam's hash model using Level of Detail techniques for faster song identification</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">Python</span>
+                            <span class="px-3 py-1 bg-yellow-100 text-yellow-600 rounded-full text-sm">Signal Processing</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold text-gray-800 mb-2">Banking Service Architecture</h3>
+                        <p class="text-gray-600 mb-4">Designed distributed service architectures and network infrastructure for banking systems</p>
+                        <div class="flex flex-wrap gap-2">
+                            <span class="px-3 py-1 bg-red-100 text-red-600 rounded-full text-sm">Distributed Systems</span>
+                            <span class="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm">Network Protocols</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-20 bg-gray-50">
+    <section id="skills" class="py-20">
         <div class="max-w-6xl mx-auto px-4">
             <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Skills</h2>
             <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
                 <div class="text-center">
-                    <i class="fab fa-react text-4xl text-blue-500 mb-4"></i>
-                    <h3 class="text-lg font-semibold text-gray-800">Frontend Development</h3>
-                    <p class="text-gray-600">React, Vue, HTML5, CSS3</p>
+                    <i class="fas fa-brain text-4xl text-blue-500 mb-4"></i>
+                    <h3 class="text-lg font-semibold text-gray-800">Machine Learning</h3>
+                    <p class="text-gray-600">TensorFlow, PyTorch, Scikit-learn</p>
                 </div>
-                <!-- Add more skill categories -->
+                <div class="text-center">
+                    <i class="fas fa-code text-4xl text-green-500 mb-4"></i>
+                    <h3 class="text-lg font-semibold text-gray-800">Programming</h3>
+                    <p class="text-gray-600">Python, Java, C++, JavaScript</p>
+                </div>
+                <div class="text-center">
+                    <i class="fas fa-database text-4xl text-purple-500 mb-4"></i>
+                    <h3 class="text-lg font-semibold text-gray-800">Databases</h3>
+                    <p class="text-gray-600">MySQL, PostgreSQL, MongoDB</p>
+                </div>
+                <div class="text-center">
+                    <i class="fas fa-globe text-4xl text-red-500 mb-4"></i>
+                    <h3 class="text-lg font-semibold text-gray-800">Web Development</h3>
+                    <p class="text-gray-600">React.js, Node.js, Django</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20">
+    <section id="contact" class="py-20 bg-gray-50">
         <div class="max-w-6xl mx-auto px-4">
             <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Get In Touch</h2>
             <div class="flex justify-center space-x-6">
-                <a href="https://github.com/yourusername" class="text-gray-500 hover:text-gray-800">
+                <a href="https://github.com/widad17" class="text-gray-500 hover:text-gray-800">
                     <i class="fab fa-github text-2xl"></i>
                 </a>
-                <a href="https://linkedin.com/in/yourusername" class="text-gray-500 hover:text-gray-800">
+                <a href="https://linkedin.com/in/widad-farhat" class="text-gray-500 hover:text-gray-800">
                     <i class="fab fa-linkedin text-2xl"></i>
                 </a>
-                <a href="mailto:your.email@example.com" class="text-gray-500 hover:text-gray-800">
+                <a href="mailto:widadf@kth.se" class="text-gray-500 hover:text-gray-800">
                     <i class="fas fa-envelope text-2xl"></i>
                 </a>
             </div>
