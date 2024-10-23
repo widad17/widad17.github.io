@@ -6,48 +6,67 @@
     <title>Widad Farhat - Portfolio</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .gradient-bg {
+            background: linear-gradient(120deg, #1a365d 0%, #2d3748 100%);
+        }
+        .hover-translate {
+            transition: transform 0.2s;
+        }
+        .hover-translate:hover {
+            transform: translateY(-5px);
+        }
+        .smooth-scroll {
+            scroll-behavior: smooth;
+        }
+    </style>
 </head>
-<body class="bg-gray-100">
-    <!-- Navigation -->
-    <nav class="bg-white shadow-lg">
+<body class="bg-gray-50 smooth-scroll">
+    <!-- Navigation - Made sticky and with gradient -->
+    <nav class="fixed w-full z-50 bg-white bg-opacity-90 backdrop-blur-sm shadow-md transition-all duration-300">
         <div class="max-w-6xl mx-auto px-4">
             <div class="flex justify-between">
                 <div class="flex space-x-7">
                     <div>
                         <a href="#" class="flex items-center py-4">
-                            <span class="font-semibold text-gray-500 text-lg">Widad Farhat</span>
+                            <span class="font-bold text-gray-700 text-lg tracking-tight">WF</span>
                         </a>
                     </div>
                 </div>
-                <div class="flex items-center space-x-6">
-                    <a href="#about" class="py-4 px-2 text-gray-500 font-semibold hover:text-blue-500">About</a>
-                    <a href="#experience" class="py-4 px-2 text-gray-500 font-semibold hover:text-blue-500">Experience</a>
-                    <a href="#projects" class="py-4 px-2 text-gray-500 font-semibold hover:text-blue-500">Projects</a>
-                    <a href="#skills" class="py-4 px-2 text-gray-500 font-semibold hover:text-blue-500">Skills</a>
-                    <a href="#contact" class="py-4 px-2 text-gray-500 font-semibold hover:text-blue-500">Contact</a>
+                <div class="flex items-center space-x-8">
+                    <a href="#about" class="py-4 px-2 text-gray-500 font-medium hover:text-blue-600 transition-colors duration-300">About</a>
+                    <a href="#experience" class="py-4 px-2 text-gray-500 font-medium hover:text-blue-600 transition-colors duration-300">Experience</a>
+                    <a href="#projects" class="py-4 px-2 text-gray-500 font-medium hover:text-blue-600 transition-colors duration-300">Projects</a>
+                    <a href="#skills" class="py-4 px-2 text-gray-500 font-medium hover:text-blue-600 transition-colors duration-300">Skills</a>
+                    <a href="#contact" class="py-4 px-2 text-gray-500 font-medium hover:text-blue-600 transition-colors duration-300">Contact</a>
                 </div>
             </div>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <div class="bg-white py-20">
+    <!-- Hero Section - With gradient background -->
+    <div class="gradient-bg py-32 md:py-40">
         <div class="max-w-6xl mx-auto px-4">
             <div class="text-center">
-                <h1 class="text-4xl font-bold text-gray-800 mb-4">Widad Farhat</h1>
-                <p class="text-xl text-gray-600">Machine Learning Graduate Student & AI Researcher</p>
+                <h1 class="text-5xl font-bold text-white mb-6 tracking-tight">Widad Farhat</h1>
+                <p class="text-2xl text-gray-200 font-light">Machine Learning Graduate Student & AI Researcher</p>
+                <div class="mt-8">
+                    <a href="#contact" class="inline-block px-8 py-3 bg-blue-600 text-white rounded-lg font-medium hover:bg-blue-700 transition-colors duration-300">Get in Touch</a>
+                </div>
             </div>
         </div>
     </div>
 
     <!-- About Section -->
-    <section id="about" class="py-20 bg-gray-50">
-        <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">About Me</h2>
-            <div class="text-gray-600 leading-relaxed max-w-3xl mx-auto">
-                <p>
+    <section id="about" class="py-24">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">About Me</h2>
+            <div class="text-gray-600 leading-relaxed text-lg space-y-6">
+                <p class="text-center">
                     Currently pursuing a Master's degree in Machine Learning at KTH Royal Institute of Technology, 
                     with a strong foundation in Computer Engineering from INSA Lyon and Mathematics from Université Claude Bernard Lyon 1. 
+                </p>
+                <p class="text-center">
                     Passionate about AI research and development, with experience in both academic and professional settings.
                 </p>
             </div>
@@ -55,30 +74,41 @@
     </section>
 
     <!-- Experience Section -->
-    <section id="experience" class="py-20">
+    <section id="experience" class="py-24 bg-gray-50">
         <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Experience</h2>
-            <div class="space-y-8">
-                <div class="bg-white rounded-lg shadow-lg p-6">
-                    <h3 class="text-xl font-bold text-gray-800">AI Researcher</h3>
-                    <p class="text-gray-600">KTH AI Society | October 2024 - Present</p>
-                    <ul class="list-disc ml-6 mt-4 text-gray-600">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Experience</h2>
+            <div class="space-y-6">
+                <div class="bg-white rounded-xl shadow-lg p-8 hover-translate">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                        <h3 class="text-xl font-bold text-gray-800">AI Researcher</h3>
+                        <p class="text-blue-600 font-medium">October 2024 - Present</p>
+                    </div>
+                    <p class="text-gray-600 font-medium mb-4">KTH AI Society</p>
+                    <ul class="list-disc ml-6 text-gray-600 space-y-2">
                         <li>Conduct research on cutting-edge AI trends and developments</li>
                         <li>Collaborate with peers on innovative AI projects</li>
                     </ul>
                 </div>
-                <div class="bg-white rounded-lg shadow-lg p-6">
-                    <h3 class="text-xl font-bold text-gray-800">Fullstack Developer Intern</h3>
-                    <p class="text-gray-600">Komodal | April 2024 - September 2024</p>
-                    <ul class="list-disc ml-6 mt-4 text-gray-600">
+
+                <div class="bg-white rounded-xl shadow-lg p-8 hover-translate">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                        <h3 class="text-xl font-bold text-gray-800">Fullstack Developer Intern</h3>
+                        <p class="text-blue-600 font-medium">April 2024 - September 2024</p>
+                    </div>
+                    <p class="text-gray-600 font-medium mb-4">Komodal</p>
+                    <ul class="list-disc ml-6 text-gray-600 space-y-2">
                         <li>Developed a comprehensive web application from scratch</li>
                         <li>Implemented both front-end and back-end components</li>
                     </ul>
                 </div>
-                <div class="bg-white rounded-lg shadow-lg p-6">
-                    <h3 class="text-xl font-bold text-gray-800">AI Development and Data Analysis Intern</h3>
-                    <p class="text-gray-600">Eden AI | June 2023 - August 2023</p>
-                    <ul class="list-disc ml-6 mt-4 text-gray-600">
+
+                <div class="bg-white rounded-xl shadow-lg p-8 hover-translate">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                        <h3 class="text-xl font-bold text-gray-800">AI Development and Data Analysis Intern</h3>
+                        <p class="text-blue-600 font-medium">June 2023 - August 2023</p>
+                    </div>
+                    <p class="text-gray-600 font-medium mb-4">Eden AI</p>
+                    <ul class="list-disc ml-6 text-gray-600 space-y-2">
                         <li>Contributed to the development of AI features for specialized solutions</li>
                         <li>Conducted user clustering analyses to derive actionable insights</li>
                     </ul>
@@ -88,38 +118,40 @@
     </section>
 
     <!-- Projects Section -->
-    <section id="projects" class="py-20 bg-gray-50">
+    <section id="projects" class="py-24">
         <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Projects</h2>
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Projects</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Anime Recommendation App with Chatbot</h3>
-                        <p class="text-gray-600 mb-4">Developed app using content-based and collaborative filtering with OpenAI LLM chatbot integration</p>
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover-translate">
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Anime Recommendation App with Chatbot</h3>
+                        <p class="text-gray-600 mb-6">Developed app using content-based and collaborative filtering with OpenAI LLM chatbot integration</p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">Python</span>
-                            <span class="px-3 py-1 bg-green-100 text-green-600 rounded-full text-sm">ML</span>
-                            <span class="px-3 py-1 bg-purple-100 text-purple-600 rounded-full text-sm">NLP</span>
+                            <span class="px-4 py-2 bg-blue-100 text-blue-600 rounded-full text-sm font-medium">Python</span>
+                            <span class="px-4 py-2 bg-green-100 text-green-600 rounded-full text-sm font-medium">ML</span>
+                            <span class="px-4 py-2 bg-purple-100 text-purple-600 rounded-full text-sm font-medium">NLP</span>
                         </div>
                     </div>
                 </div>
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Audio Fingerprinting</h3>
-                        <p class="text-gray-600 mb-4">Improved Shazam's hash model using Level of Detail techniques for faster song identification</p>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover-translate">
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Audio Fingerprinting</h3>
+                        <p class="text-gray-600 mb-6">Improved Shazam's hash model using Level of Detail techniques for faster song identification</p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-blue-100 text-blue-600 rounded-full text-sm">Python</span>
-                            <span class="px-3 py-1 bg-yellow-100 text-yellow-600 rounded-full text-sm">Signal Processing</span>
+                            <span class="px-4 py-2 bg-blue-100 text-blue-600 rounded-full text-sm font-medium">Python</span>
+                            <span class="px-4 py-2 bg-yellow-100 text-yellow-600 rounded-full text-sm font-medium">Signal Processing</span>
                         </div>
                     </div>
                 </div>
-                <div class="bg-white rounded-lg shadow-lg overflow-hidden">
-                    <div class="p-6">
-                        <h3 class="text-xl font-bold text-gray-800 mb-2">Banking Service Architecture</h3>
-                        <p class="text-gray-600 mb-4">Designed distributed service architectures and network infrastructure for banking systems</p>
+
+                <div class="bg-white rounded-xl shadow-lg overflow-hidden hover-translate">
+                    <div class="p-8">
+                        <h3 class="text-xl font-bold text-gray-800 mb-4">Banking Service Architecture</h3>
+                        <p class="text-gray-600 mb-6">Designed distributed service architectures and network infrastructure for banking systems</p>
                         <div class="flex flex-wrap gap-2">
-                            <span class="px-3 py-1 bg-red-100 text-red-600 rounded-full text-sm">Distributed Systems</span>
-                            <span class="px-3 py-1 bg-indigo-100 text-indigo-600 rounded-full text-sm">Network Protocols</span>
+                            <span class="px-4 py-2 bg-red-100 text-red-600 rounded-full text-sm font-medium">Distributed Systems</span>
+                            <span class="px-4 py-2 bg-indigo-100 text-indigo-600 rounded-full text-sm font-medium">Network</span>
                         </div>
                     </div>
                 </div>
@@ -128,28 +160,31 @@
     </section>
 
     <!-- Skills Section -->
-    <section id="skills" class="py-20">
+    <section id="skills" class="py-24 bg-gray-50">
         <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Skills</h2>
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
-                <div class="text-center">
-                    <i class="fas fa-brain text-4xl text-blue-500 mb-4"></i>
-                    <h3 class="text-lg font-semibold text-gray-800">Machine Learning</h3>
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Skills</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center hover-translate">
+                    <i class="fas fa-brain text-4xl text-blue-600 mb-6"></i>
+                    <h3 class="text-lg font-bold text-gray-800 mb-4">Machine Learning</h3>
                     <p class="text-gray-600">TensorFlow, PyTorch, Scikit-learn</p>
                 </div>
-                <div class="text-center">
-                    <i class="fas fa-code text-4xl text-green-500 mb-4"></i>
-                    <h3 class="text-lg font-semibold text-gray-800">Programming</h3>
+
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center hover-translate">
+                    <i class="fas fa-code text-4xl text-green-600 mb-6"></i>
+                    <h3 class="text-lg font-bold text-gray-800 mb-4">Programming</h3>
                     <p class="text-gray-600">Python, Java, C++, JavaScript</p>
                 </div>
-                <div class="text-center">
-                    <i class="fas fa-database text-4xl text-purple-500 mb-4"></i>
-                    <h3 class="text-lg font-semibold text-gray-800">Databases</h3>
+
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center hover-translate">
+                    <i class="fas fa-database text-4xl text-purple-600 mb-6"></i>
+                    <h3 class="text-lg font-bold text-gray-800 mb-4">Databases</h3>
                     <p class="text-gray-600">MySQL, PostgreSQL, MongoDB</p>
                 </div>
-                <div class="text-center">
-                    <i class="fas fa-globe text-4xl text-red-500 mb-4"></i>
-                    <h3 class="text-lg font-semibold text-gray-800">Web Development</h3>
+
+                <div class="bg-white p-8 rounded-xl shadow-lg text-center hover-translate">
+                    <i class="fas fa-globe text-4xl text-red-600 mb-6"></i>
+                    <h3 class="text-lg font-bold text-gray-800 mb-4">Web Development</h3>
                     <p class="text-gray-600">React.js, Node.js, Django</p>
                 </div>
             </div>
@@ -157,26 +192,26 @@
     </section>
 
     <!-- Contact Section -->
-    <section id="contact" class="py-20 bg-gray-50">
+    <section id="contact" class="py-24">
         <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-8">Get In Touch</h2>
-            <div class="flex justify-center space-x-6">
-                <a href="https://github.com/widad17" class="text-gray-500 hover:text-gray-800">
-                    <i class="fab fa-github text-2xl"></i>
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12">Get In Touch</h2>
+            <div class="flex justify-center space-x-8">
+                <a href="https://github.com/widad17" class="text-gray-600 hover:text-gray-900 transition-colors duration-300">
+                    <i class="fab fa-github text-3xl"></i>
                 </a>
-                <a href="https://linkedin.com/in/widad-farhat" class="text-gray-500 hover:text-gray-800">
-                    <i class="fab fa-linkedin text-2xl"></i>
+                <a href="https://linkedin.com/in/widad-farhat" class="text-gray-600 hover:text-gray-900 transition-colors duration-300">
+                    <i class="fab fa-linkedin text-3xl"></i>
                 </a>
-                <a href="mailto:widadf@kth.se" class="text-gray-500 hover:text-gray-800">
-                    <i class="fas fa-envelope text-2xl"></i>
+                <a href="mailto:widadf@kth.se" class="text-gray-600 hover:text-gray-900 transition-colors duration-300">
+                    <i class="fas fa-envelope text-3xl"></i>
                 </a>
             </div>
         </div>
     </section>
 
-    <footer class="bg-gray-800 text-white py-8">
+    <footer class="gradient-bg text-white py-12">
         <div class="max-w-6xl mx-auto px-4 text-center">
-            <p>&copy; 2024 Widad Farhat. All rights reserved.</p>
+            <p class="text-gray-300">&copy; 2024 Widad Farhat. All rights reserved.</p>
         </div>
     </footer>
 </body>
