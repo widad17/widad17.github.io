@@ -1,467 +1,1334 @@
 <!DOCTYPE html>
+
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Widad Farhat - Portfolio</title>
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
     <style>
+
         :root {
-            --pastel-pink: #ffd1dc;
-            --pastel-purple: #e0c3fc;
-            --pastel-blue: #c5f0ff;
-            --pastel-mint: #c3fae8;
-            --pastel-yellow: #fff3c4;
+
+            --github-dark: #0d1117;
+
+            --github-darker: #010409;
+
+            --neon-blue: #00b4ff;
+
+            --neon-purple: #bd00ff;
+
+            --neon-cyan: #0ff;
+
+            --card-bg: #161b22;
+
+            --text-primary: #c9d1d9;
+
+            --text-secondary: #8b949e;
+
         }
 
-        .gradient-bg {
-            background: linear-gradient(135deg, var(--pastel-pink) 0%, var(--pastel-purple) 100%);
+
+
+        body {
+
+            background-color: var(--github-dark);
+
+            color: var(--text-primary);
+
+            overflow-x: hidden;
+
         }
 
-        .hover-translate {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+
+        /* Dynamic Background Effect */
+
+        .matrix-bg {
+
+            position: fixed;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            height: 100%;
+
+            z-index: -1;
+
+            opacity: 0.05;
+
         }
 
-        .hover-translate:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-        }
 
-        .smooth-scroll {
-            scroll-behavior: smooth;
-        }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-10px) rotate(5deg); }
-        }
+        /* Animated Border */
 
-        @keyframes sparkle {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
-        }
+        .animated-border {
 
-        .floating {
-            animation: float 3s ease-in-out infinite;
-        }
-
-        .sparkling {
-            animation: sparkle 2s ease-in-out infinite;
-        }
-
-        .decorative-element {
             position: relative;
+
+            background: var(--card-bg);
+
+            border-radius: 10px;
+
+            z-index: 0;
+
+            overflow: hidden;
+
         }
 
-        .decorative-element::before,
-        .decorative-element::after {
-            content: '✿';
+
+
+        .animated-border::before {
+
+            content: '';
+
             position: absolute;
-            font-size: 2rem;
-            color: white;
-            opacity: 0.8;
-            animation: float 3s ease-in-out infinite;
+
+            top: -50%;
+
+            left: -50%;
+
+            width: 200%;
+
+            height: 200%;
+
+            background: linear-gradient(
+
+                45deg,
+
+                transparent,
+
+                transparent,
+
+                var(--neon-blue),
+
+                var(--neon-purple),
+
+                var(--neon-cyan)
+
+            );
+
+            z-index: -1;
+
+            animation: rotate 20s linear infinite;
+
         }
 
-        .decorative-element::before {
-            left: -40px;
-            animation-delay: 0.5s;
+
+
+        .animated-border::after {
+
+            content: '';
+
+            position: absolute;
+
+            inset: 2px;
+
+            background: var(--card-bg);
+
+            border-radius: 8px;
+
+            z-index: -1;
+
         }
 
-        .decorative-element::after {
-            right: -40px;
-            animation-delay: 1s;
+
+
+        @keyframes rotate {
+
+            0% { transform: rotate(0deg); }
+
+            100% { transform: rotate(360deg); }
+
         }
+
+
+
+        /* Glitch Effect */
+
+        .glitch {
+
+            position: relative;
+
+            text-shadow: 0.05em 0 0 var(--neon-blue), 
+
+                        -0.05em -0.025em 0 var(--neon-purple),
+
+                        -0.025em 0.05em 0 var(--neon-cyan);
+
+            animation: glitch 4s infinite;
+
+        }
+
+
+
+        @keyframes glitch {
+
+            0% { transform: skew(0deg); }
+
+            20% { transform: skew(2deg); }
+
+            40% { transform: skew(-2deg); }
+
+            60% { transform: skew(1deg); }
+
+            80% { transform: skew(-1deg); }
+
+            100% { transform: skew(0deg); }
+
+        }
+
+
+
+        /* Hover Effects */
+
+        .card-hover {
+
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+
+                        box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+        }
+
+
+
+        .card-hover:hover {
+
+            transform: translateY(-10px) scale(1.02);
+
+            box-shadow: 0 0 30px rgba(189, 0, 255, 0.2);
+
+        }
+
+
+
+        /* Progress Bar Animation */
+
+        .skill-bar {
+
+            height: 4px;
+
+            background: linear-gradient(90deg, 
+
+                var(--neon-blue) 0%, 
+
+                var(--neon-purple) 50%, 
+
+                var(--neon-cyan) 100%);
+
+            background-size: 200% 100%;
+
+            animation: gradient-shift 3s linear infinite;
+
+        }
+
+
+
+        @keyframes gradient-shift {
+
+            0% { background-position: 100% 0%; }
+
+            100% { background-position: -100% 0%; }
+
+        }
+
+
+
+        /* Navigation Effect */
 
         .nav-link {
+
             position: relative;
-            transition: color 0.3s ease;
+
+            overflow: hidden;
+
         }
+
+
 
         .nav-link::after {
+
             content: '';
+
             position: absolute;
-            width: 0;
-            height: 2px;
+
             bottom: 0;
-            left: 50%;
-            background: var(--pastel-pink);
-            transition: all 0.3s ease;
+
+            left: 0;
+
+            width: 100%;
+
+            height: 2px;
+
+            background: linear-gradient(90deg, 
+
+                var(--neon-blue), 
+
+                var(--neon-purple), 
+
+                var(--neon-cyan));
+
+            transform: translateX(-100%);
+
+            transition: transform 0.3s ease;
+
         }
+
+
 
         .nav-link:hover::after {
-            width: 100%;
+
+            transform: translateX(0);
+
+        }
+
+
+
+        /* Grid Animation */
+
+        .grid-bg {
+
+            position: absolute;
+
+            top: 0;
+
             left: 0;
+
+            width: 100%;
+
+            height: 100%;
+
+            background-size: 50px 50px;
+
+            background-image: 
+
+                linear-gradient(to right, rgba(189, 0, 255, 0.1) 1px, transparent 1px),
+
+                linear-gradient(to bottom, rgba(189, 0, 255, 0.1) 1px, transparent 1px);
+
+            animation: grid-move 20s linear infinite;
+
         }
 
-        .custom-card {
-            background: rgba(255, 255, 255, 0.9);
-            backdrop-filter: blur(10px);
-            border-radius: 20px;
+
+
+        @keyframes grid-move {
+
+            0% { transform: translate(0, 0); }
+
+            100% { transform: translate(-50px, -50px); }
+
+        }
+
+
+
+        /* Text Gradient Animation */
+
+        .gradient-text {
+
+            background: linear-gradient(90deg, 
+
+                var(--neon-blue), 
+
+                var(--neon-purple), 
+
+                var(--neon-cyan), 
+
+                var(--neon-blue));
+
+            background-size: 300% 100%;
+
+            -webkit-background-clip: text;
+
+            background-clip: text;
+
+            -webkit-text-fill-color: transparent;
+
+            animation: gradient-text 8s linear infinite;
+
+        }
+
+
+
+        @keyframes gradient-text {
+
+            0% { background-position: 0% 50%; }
+
+            100% { background-position: 300% 50%; }
+
+        }
+
+
+
+        /* Dynamic Card Hover */
+
+        .dynamic-card {
+
             transition: all 0.3s ease;
+
         }
 
-        .custom-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+
+
+        .dynamic-card:hover {
+
+            transform: perspective(1000px) rotateX(10deg) rotateY(10deg) scale(1.05);
+
+            box-shadow: 
+
+                0 5px 15px rgba(0, 180, 255, 0.2),
+
+                0 10px 30px rgba(189, 0, 255, 0.2);
+
         }
 
-        .skills-icon {
-            transition: all 0.3s ease;
+
+
+        /* Scroll Progress Bar */
+
+        .scroll-progress {
+
+            position: fixed;
+
+            top: 0;
+
+            left: 0;
+
+            width: 100%;
+
+            height: 3px;
+
+            background: linear-gradient(90deg, 
+
+                var(--neon-blue), 
+
+                var(--neon-purple), 
+
+                var(--neon-cyan));
+
+            z-index: 1000;
+
+            transform-origin: 0;
+
         }
 
-        .skills-card:hover .skills-icon {
-            transform: scale(1.2);
+
+
+        /* Typing Effect */
+
+        .typing-text {
+
+            border-right: 2px solid var(--neon-purple);
+
+            white-space: nowrap;
+
+            overflow: hidden;
+
+            animation: typing 3.5s steps(40, end),
+
+                       blink-caret 0.75s step-end infinite;
+
         }
 
-        .contact-icon {
-            transition: all 0.3s ease;
+
+
+        @keyframes typing {
+
+            from { width: 0 }
+
+            to { width: 100% }
+
         }
 
-        .contact-icon:hover {
-            transform: scale(1.2) rotate(10deg);
-            color: var(--pastel-pink);
+
+
+        @keyframes blink-caret {
+
+            from, to { border-color: transparent }
+
+            50% { border-color: var(--neon-purple) }
+
         }
 
-        .hero-title {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(5px);
-            border-radius: 30px;
-            padding: 20px;
-            box-shadow: 0 8px 32px rgba(255, 255, 255, 0.1);
-        }
-
-        .background-dots {
-            background-image: radial-gradient(rgba(255, 255, 255, 0.2) 1px, transparent 1px);
-            background-size: 20px 20px;
-        }
-
-        .tag {
-            transition: all 0.3s ease;
-        }
-
-        .tag:hover {
-            transform: scale(1.1);
-        }
-
-        .skill-progress {
-            height: 4px;
-            background: var(--pastel-pink);
-            border-radius: 2px;
-            transition: width 1s ease-in-out;
-        }
     </style>
+
 </head>
-<body class="bg-gray-50 smooth-scroll">
+
+<body>
+
+    <!-- Matrix Background -->
+
+    <canvas id="matrix" class="matrix-bg"></canvas>
+
+    
+
+    <!-- Scroll Progress Bar -->
+
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+
+
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 bg-white bg-opacity-90 backdrop-blur-sm shadow-md">
+
+    <nav class="fixed w-full z-50 bg-opacity-90 backdrop-filter backdrop-blur-lg bg-github-darker border-b border-opacity-20 border-neon-purple">
+
         <div class="max-w-6xl mx-auto px-4">
-            <div class="flex justify-between">
-                <div class="flex space-x-7">
-                    <a href="#" class="flex items-center py-4">
-                        <span class="font-bold text-gray-700 text-lg">✧ WF ✧</span>
-                    </a>
+
+            <div class="flex justify-between items-center h-16">
+
+                <a href="#" class="gradient-text text-xl font-bold">WF</a>
+
+                <div class="flex space-x-8">
+
+                    <a href="#about" class="nav-link text-gray-300 hover:text-neon-blue">About</a>
+
+                    <a href="#experience" class="nav-link text-gray-300 hover:text-neon-purple">Experience</a>
+
+                    <a href="#projects" class="nav-link text-gray-300 hover:text-neon-cyan">Projects</a>
+
+                    <a href="#skills" class="nav-link text-gray-300 hover:text-neon-blue">Skills</a>
+
+                    <a href="#contact" class="nav-link text-gray-300 hover:text-neon-purple">Contact</a>
+
                 </div>
-                <div class="flex items-center space-x-8">
-                    <a href="#about" class="nav-link py-4 px-2 text-gray-500 font-medium hover:text-pink-400">About</a>
-                    <a href="#experience" class="nav-link py-4 px-2 text-gray-500 font-medium hover:text-pink-400">Experience</a>
-                    <a href="#projects" class="nav-link py-4 px-2 text-gray-500 font-medium hover:text-pink-400">Projects</a>
-                    <a href="#skills" class="nav-link py-4 px-2 text-gray-500 font-medium hover:text-pink-400">Skills</a>
-                    <a href="#contact" class="nav-link py-4 px-2 text-gray-500 font-medium hover:text-pink-400">Contact</a>
+
+            </div>
+
+        </div>
+
+    </nav>
+
+
+
+    <div class="relative min-h-screen flex items-center justify-center overflow-hidden">
+
+        <div class="grid-bg"></div>
+
+        <div class="container mx-auto px-4">
+
+            <div class="flex flex-col md:flex-row items-center justify-between gap-12">
+
+                <!-- Left Side: Name and Navigation Buttons -->
+
+                <div class="w-full md:w-1/2 space-y-8">
+
+                    <div class="space-y-4">
+
+                        <h1 class="glitch text-6xl font-bold mb-4">Widad Farhat</h1>
+
+                        <div class="typing-text text-xl text-gray-300 mb-8">
+
+                            Machine Learning Graduate Student & AI Researcher
+
+                        </div>
+
+                    </div>
+
+                    
+
+                    <!-- Vertical Navigation Buttons -->
+
+                    <div class="flex flex-col space-y-4">
+
+                        <a href="#contact" class="animated-border group flex items-center px-6 py-3 text-neon-blue hover:text-neon-purple transition-colors duration-300">
+
+                            <span class="inline-block w-8">
+
+                                <i class="fas fa-envelope"></i>
+
+                            </span>
+
+                            <span>Get in Touch</span>
+
+                            <span class="ml-auto opacity-0 group-hover:opacity-100 transition-opacity">
+
+                                <i class="fas fa-arrow-right"></i>
+
+                            </span>
+
+                        </a>
+
+                        
+
+                        <a href="#projects" class="animated-border group flex items-center px-6 py-3 text-neon-blue hover:text-neon-cyan transition-colors duration-300">
+
+                            <span class="inline-block w-8">
+
+                                <i class="fas fa-code-branch"></i>
+
+                            </span>
+
+                            <span>Projects</span>
+
+                            <span class="ml-auto opacity-0 group-hover:opacity-100 transition-opacity">
+
+                                <i class="fas fa-arrow-right"></i>
+
+                            </span>
+
+                        </a>
+
+                        
+
+                        <a href="#experience" class="animated-border group flex items-center px-6 py-3 text-neon-blue hover:text-neon-purple transition-colors duration-300">
+
+                            <span class="inline-block w-8">
+
+                                <i class="fas fa-briefcase"></i>
+
+                            </span>
+
+                            <span>Experience</span>
+
+                            <span class="ml-auto opacity-0 group-hover:opacity-100 transition-opacity">
+
+                                <i class="fas fa-arrow-right"></i>
+
+                            </span>
+
+                        </a>
+
+                        
+
+                        <a href="#skills" class="animated-border group flex items-center px-6 py-3 text-neon-blue hover:text-neon-cyan transition-colors duration-300">
+
+                            <span class="inline-block w-8">
+
+                                <i class="fas fa-tools"></i>
+
+                            </span>
+
+                            <span>Skills</span>
+
+                            <span class="ml-auto opacity-0 group-hover:opacity-100 transition-opacity">
+
+                                <i class="fas fa-arrow-right"></i>
+
+                            </span>
+
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- Right Side: About Me -->
+
+                <div class="w-full md:w-1/2">
+
+                    <div class="custom-card p-8 backdrop-blur-lg border border-neon-purple/20 hover:border-neon-purple/40 transition-all duration-300">
+
+                        <h2 class="text-2xl font-bold mb-6 gradient-text">About Me</h2>
+
+                        <div class="space-y-4 text-text-primary leading-relaxed">
+
+                            <p>
+
+                                Currently pursuing a Master's degree in Machine Learning at KTH Royal Institute of Technology, 
+
+                                with a strong foundation in Computer Engineering from INSA Lyon and Mathematics from Université Claude Bernard Lyon 1.
+
+                            </p>
+
+                            <p>
+
+                                Passionate about AI research and development, with experience in both academic and professional settings.
+
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- Experience Section -->
+
+    <section id="experience" class="py-24">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12 decorative-element neon-text">Experience</h2>
+            <div class="space-y-8">
+                <!-- KTH AI Society Card -->
+                <div class="custom-card p-8 dynamic-card" onmousemove="handleMouseMove(event)" onmouseleave="handleMouseLeave(event)">
+                    <div class="flex flex-col md:flex-row gap-6">
+                        <div class="w-16 h-16 rounded-lg overflow-hidden bg-github-darker flex items-center justify-center">
+                            <img src="images\kthai.png" alt="KTH AI Society Logo" class="w-12 h-12 object-contain">
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                                <h3 class="text-xl font-bold neon-text">AI Researcher</h3>
+                                <p class="text-neon-blue">October 2024 - Present</p>
+                            </div>
+                            <a href="https://kthais.com/" target="_blank" rel="noopener noreferrer" 
+                               class="text-lg font-medium text-neon-cyan hover:text-neon-purple transition-colors inline-flex items-center gap-2 mb-4">
+                                KTH AI Society
+                                <i class="fas fa-external-link-alt text-sm"></i>
+                            </a>
+                            <ul class="list-disc ml-6 text-text-secondary space-y-2">
+                                <li>Conduct research on cutting-edge AI trends and developments</li>
+                                <li>Collaborate with peers on innovative AI projects</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Komodal Card -->
+                <div class="custom-card p-8 dynamic-card" onmousemove="handleMouseMove(event)" onmouseleave="handleMouseLeave(event)">
+                    <div class="flex flex-col md:flex-row gap-6">
+                        <div class="w-16 h-16 rounded-lg overflow-hidden bg-github-darker flex items-center justify-center">
+                            <img src="images/komodal.webp" alt="Komodal Logo" class="w-12 h-12 object-contain">
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                                <h3 class="text-xl font-bold neon-text">Fullstack Developer Intern</h3>
+                                <p class="text-neon-blue">April 2024 - September 2024</p>
+                            </div>
+                            <a href="https://komodal.co/" target="_blank" rel="noopener noreferrer" 
+                               class="text-lg font-medium text-neon-cyan hover:text-neon-purple transition-colors inline-flex items-center gap-2 mb-4">
+                                Komodal
+                                <i class="fas fa-external-link-alt text-sm"></i>
+                            </a>
+                            <ul class="list-disc ml-6 text-text-secondary space-y-2">
+                                <li>Developed a comprehensive web application from scratch</li>
+                                <li>Implemented both front-end and back-end components</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+    
+                <!-- Eden AI Card -->
+                <div class="custom-card p-8 dynamic-card" onmousemove="handleMouseMove(event)" onmouseleave="handleMouseLeave(event)">
+                    <div class="flex flex-col md:flex-row gap-6">
+                        <div class="w-16 h-16 rounded-lg overflow-hidden bg-github-darker flex items-center justify-center">
+                            <img src="images\edenai.png" alt="Eden AI Logo" class="w-12 h-12 object-contain">
+                        </div>
+                        <div class="flex-1">
+                            <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+                                <h3 class="text-xl font-bold neon-text">AI Development and Data Analysis Intern</h3>
+                                <p class="text-neon-blue">June 2023 - August 2023</p>
+                            </div>
+                            <a href="https://app.edenai.run/user/login" target="_blank" rel="noopener noreferrer" 
+                               class="text-lg font-medium text-neon-cyan hover:text-neon-purple transition-colors inline-flex items-center gap-2 mb-4">
+                                Eden AI
+                                <i class="fas fa-external-link-alt text-sm"></i>
+                            </a>
+                            <ul class="list-disc ml-6 text-text-secondary space-y-2">
+                                <li>Contributed to the development of AI features for specialized solutions</li>
+                                <li>Conducted user clustering analyses to derive actionable insights</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </nav>
+    </section>
 
-    <!-- Hero Section -->
-    <div class="gradient-bg py-32 md:py-40 background-dots">
+
+    <!-- Projects Section -->
+
+    <section id="projects" class="py-24">
+
         <div class="max-w-6xl mx-auto px-4">
-            <div class="text-center">
-                <div class="mb-8">
-                    <i class="fas fa-heart text-white text-3xl floating"></i>
+
+            <h2 class="text-3xl font-bold text-center mb-12 decorative-element neon-text">Projects</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+                <div class="custom-card p-8 hover-translate">
+
+                    <div>
+
+                        <h3 class="text-xl font-bold neon-text mb-4">Anime Recommendation App with Chatbot</h3>
+
+                        <p class="text-text-secondary mb-6">Developed app using content-based and collaborative filtering with OpenAI LLM chatbot integration</p>
+
+                        <div class="flex flex-wrap gap-2">
+
+                            <span class="tag">Python</span><span class="tag">ML</span>
+
+                            <span class="tag">NLP</span>
+
+                        </div>
+
+                    </div>
+
                 </div>
-                <div class="hero-title inline-block mb-8">
-                    <h1 class="text-5xl font-bold text-white mb-6 tracking-tight decorative-element">
-                        ✧ Widad Farhat ✧
-                    </h1>
-                    <p class="text-2xl text-white font-light">
-                        <i class="fas fa-star sparkling mr-2"></i>
-                        Machine Learning Graduate Student & AI Researcher
-                        <i class="fas fa-star sparkling ml-2"></i>
-                    </p>
+
+
+
+                <div class="custom-card p-8 hover-translate">
+
+                    <div>
+
+                        <h3 class="text-xl font-bold neon-text mb-4">Audio Fingerprinting</h3>
+
+                        <p class="text-text-secondary mb-6">Improved Shazam's hash model using Level of Detail techniques for faster song identification</p>
+
+                        <div class="flex flex-wrap gap-2">
+
+                            <span class="tag">Python</span>
+
+                            <span class="tag">Signal Processing</span>
+
+                        </div>
+
+                    </div>
+
                 </div>
-                <div class="mt-8">
-                    <a href="#contact" class="inline-block px-8 py-3 bg-white text-pink-400 rounded-full font-medium hover:bg-pink-50 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:-translate-y-1">
-                        <i class="fas fa-envelope mr-2"></i>
-                        Get in Touch
-                    </a>
+
+
+
+                <div class="custom-card p-8 hover-translate">
+
+                    <div>
+
+                        <h3 class="text-xl font-bold neon-text mb-4">Banking Service Architecture</h3>
+
+                        <p class="text-text-secondary mb-6">Designed distributed service architectures and network infrastructure for banking systems</p>
+
+                        <div class="flex flex-wrap gap-2">
+
+                            <span class="tag">Distributed Systems</span>
+
+                            <span class="tag">Network</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+<!-- Skills Section -->
+<section id="skills" class="py-24">
+    <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12 decorative-element neon-text">Skills</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Machine Learning Card -->
+            <div class="custom-card p-8 dynamic-card" onmousemove="handleMouseMove(event)" onmouseleave="handleMouseLeave(event)">
+                <div class="text-center mb-6">
+                    <i class="fas fa-brain text-4xl mb-4 text-neon-purple"></i>
+                    <h3 class="text-2xl font-bold neon-text">Machine Learning</h3>
+                </div>
+                <div class="space-y-4">
+                    <div>
+                        <div class="flex justify-between text-text-secondary mb-2">
+                            <span>TensorFlow</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="w-full bg-github-darker rounded-full">
+                            <div class="skill-bar h-2 rounded-full" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-text-secondary mb-2">
+                            <span>PyTorch</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="w-full bg-github-darker rounded-full">
+                            <div class="skill-bar h-2 rounded-full" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-text-secondary mb-2">
+                            <span>Scikit-learn</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="w-full bg-github-darker rounded-full">
+                            <div class="skill-bar h-2 rounded-full" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-text-secondary mb-2">
+                            <span>Keras</span>
+                            <span>88%</span>
+                        </div>
+                        <div class="w-full bg-github-darker rounded-full">
+                            <div class="skill-bar h-2 rounded-full" style="width: 88%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-text-secondary mb-2">
+                            <span>Pandas</span>
+                            <span>92%</span>
+                        </div>
+                        <div class="w-full bg-github-darker rounded-full">
+                            <div class="skill-bar h-2 rounded-full" style="width: 92%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-text-secondary mb-2">
+                            <span>NumPy</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="w-full bg-github-darker rounded-full">
+                            <div class="skill-bar h-2 rounded-full" style="width: 90%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Programming Card -->
+            <div class="custom-card p-8 dynamic-card" onmousemove="handleMouseMove(event)" onmouseleave="handleMouseLeave(event)">
+                <div class="text-center mb-6">
+                    <i class="fas fa-code text-4xl mb-4 text-neon-blue"></i>
+                    <h3 class="text-2xl font-bold neon-text">Programming</h3>
+                </div>
+                <div class="space-y-4">
+                    <div>
+                        <div class="flex justify-between text-text-secondary mb-2">
+                            <span>Python</span>
+                            <span>95%</span>
+                        </div>
+                        <div class="w-full bg-github-darker rounded-full">
+                            <div class="skill-bar h-2 rounded-full" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-text-secondary mb-2">
+                            <span>Java</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="w-full bg-github-darker rounded-full">
+                            <div class="skill-bar h-2 rounded-full" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-text-secondary mb-2">
+                            <span>JavaScript</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="w-full bg-github-darker rounded-full">
+                            <div class="skill-bar h-2 rounded-full" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-text-secondary mb-2">
+                            <span>C++</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="w-full bg-github-darker rounded-full">
+                            <div class="skill-bar h-2 rounded-full" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-text-secondary mb-2">
+                            <span>TypeScript</span>
+                            <span>82%</span>
+                        </div>
+                        <div class="w-full bg-github-darker rounded-full">
+                            <div class="skill-bar h-2 rounded-full" style="width: 82%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-text-secondary mb-2">
+                            <span>SQL</span>
+                            <span>88%</span>
+                        </div>
+                        <div class="w-full bg-github-darker rounded-full">
+                            <div class="skill-bar h-2 rounded-full" style="width: 88%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Databases Card -->
+            <div class="custom-card p-8 dynamic-card" onmousemove="handleMouseMove(event)" onmouseleave="handleMouseLeave(event)">
+                <div class="text-center mb-6">
+                    <i class="fas fa-database text-4xl mb-4 text-neon-cyan"></i>
+                    <h3 class="text-2xl font-bold neon-text">Databases</h3>
+                </div>
+                <div class="space-y-4">
+                    <div>
+                        <div class="flex justify-between text-text-secondary mb-2">
+                            <span>MySQL</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="w-full bg-github-darker rounded-full">
+                            <div class="skill-bar h-2 rounded-full" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-text-secondary mb-2">
+                            <span>PostgreSQL</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="w-full bg-github-darker rounded-full">
+                            <div class="skill-bar h-2 rounded-full" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-text-secondary mb-2">
+                            <span>MongoDB</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="w-full bg-github-darker rounded-full">
+                            <div class="skill-bar h-2 rounded-full" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-text-secondary mb-2">
+                            <span>Redis</span>
+                            <span>75%</span>
+                        </div>
+                        <div class="w-full bg-github-darker rounded-full">
+                            <div class="skill-bar h-2 rounded-full" style="width: 75%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-text-secondary mb-2">
+                            <span>SQLite</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="w-full bg-github-darker rounded-full">
+                            <div class="skill-bar h-2 rounded-full" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-text-secondary mb-2">
+                            <span>Firebase</span>
+                            <span>78%</span>
+                        </div>
+                        <div class="w-full bg-github-darker rounded-full">
+                            <div class="skill-bar h-2 rounded-full" style="width: 78%"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Web Development Card -->
+            <div class="custom-card p-8 dynamic-card" onmousemove="handleMouseMove(event)" onmouseleave="handleMouseLeave(event)">
+                <div class="text-center mb-6">
+                    <i class="fas fa-globe text-4xl mb-4 text-neon-purple"></i>
+                    <h3 class="text-2xl font-bold neon-text">Web Development</h3>
+                </div>
+                <div class="space-y-4">
+                    <div>
+                        <div class="flex justify-between text-text-secondary mb-2">
+                            <span>React.js</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="w-full bg-github-darker rounded-full">
+                            <div class="skill-bar h-2 rounded-full" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-text-secondary mb-2">
+                            <span>Node.js</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="w-full bg-github-darker rounded-full">
+                            <div class="skill-bar h-2 rounded-full" style="width: 80%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-text-secondary mb-2">
+                            <span>Django</span>
+                            <span>90%</span>
+                        </div>
+                        <div class="w-full bg-github-darker rounded-full">
+                            <div class="skill-bar h-2 rounded-full" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-text-secondary mb-2">
+                            <span>Next.js</span>
+                            <span>82%</span>
+                        </div>
+                        <div class="w-full bg-github-darker rounded-full">
+                            <div class="skill-bar h-2 rounded-full" style="width: 82%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-text-secondary mb-2">
+                            <span>Tailwind CSS</span>
+                            <span>88%</span>
+                        </div>
+                        <div class="w-full bg-github-darker rounded-full">
+                            <div class="skill-bar h-2 rounded-full" style="width: 88%"></div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between text-text-secondary mb-2">
+                            <span>Express.js</span>
+                            <span>85%</span>
+                        </div>
+                        <div class="w-full bg-github-darker rounded-full">
+                            <div class="skill-bar h-2 rounded-full" style="width: 85%"></div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
+</section>
 
-    <!-- About Section -->
-    <section id="about" class="py-24">
-        <div class="max-w-4xl mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12 decorative-element">About Me</h2>
-            <div class="custom-card p-8">
-                <div class="text-gray-600 leading-relaxed text-lg space-y-6">
-                    <p class="text-center">
-                        Currently pursuing a Master's degree in Machine Learning at KTH Royal Institute of Technology, 
-                        with a strong foundation in Computer Engineering from INSA Lyon and Mathematics from Université Claude Bernard Lyon 1.
-                    </p>
-                    <p class="text-center">
-                        Passionate about AI research and development, with experience in both academic and professional settings.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- Experience Section -->
-    <section id="experience" class="py-24" style="background: linear-gradient(135deg, var(--pastel-blue) 0%, var(--pastel-mint) 100%)">
-        <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12 decorative-element">Experience</h2>
-            <div class="space-y-6">
-                <div class="custom-card p-8 hover-translate">
-                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                        <h3 class="text-xl font-bold text-gray-800">AI Researcher</h3>
-                        <p class="text-pink-400 font-medium">October 2024 - Present</p>
-                    </div>
-                    <p class="text-gray-600 font-medium mb-4">KTH AI Society</p>
-                    <ul class="list-disc ml-6 text-gray-600 space-y-2">
-                        <li>Conduct research on cutting-edge AI trends and developments</li>
-                        <li>Collaborate with peers on innovative AI projects</li>
-                    </ul>
-                </div>
 
-                <div class="custom-card p-8 hover-translate">
-                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                        <h3 class="text-xl font-bold text-gray-800">Fullstack Developer Intern</h3>
-                        <p class="text-pink-400 font-medium">April 2024 - September 2024</p>
-                    </div>
-                    <p class="text-gray-600 font-medium mb-4">Komodal</p>
-                    <ul class="list-disc ml-6 text-gray-600 space-y-2">
-                        <li>Developed a comprehensive web application from scratch</li>
-                        <li>Implemented both front-end and back-end components</li>
-                    </ul>
-                </div>
+    <!-- Contact Section -->
 
-                <div class="custom-card p-8 hover-translate">
-                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
-                        <h3 class="text-xl font-bold text-gray-800">AI Development and Data Analysis Intern</h3>
-                        <p class="text-pink-400 font-medium">June 2023 - August 2023</p>
-                    </div>
-                    <p class="text-gray-600 font-medium mb-4">Eden AI</p>
-                    <ul class="list-disc ml-6 text-gray-600 space-y-2">
-                        <li>Contributed to the development of AI features for specialized solutions</li>
-                        <li>Conducted user clustering analyses to derive actionable insights</li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Projects Section -->
-    <section id="projects" class="py-24" style="background: linear-gradient(135deg, var(--pastel-yellow) 0%, var(--pastel-mint) 100%)">
-        <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12 decorative-element">Projects</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="custom-card p-8 hover-translate">
-                    <div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-4">Anime Recommendation App with Chatbot</h3>
-                        <p class="text-gray-600 mb-6">Developed app using content-based and collaborative filtering with OpenAI LLM chatbot integration</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="tag px-4 py-2 bg-blue-100 text-blue-600 rounded-full text-sm font-medium">Python</span>
-                            <span class="tag px-4 py-2 bg-green-100 text-green-600 rounded-full text-sm font-medium">ML</span>
-                            <span class="tag px-4 py-2 bg-purple-100 text-purple-600 rounded-full text-sm font-medium">NLP</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="custom-card p-8 hover-translate">
-                    <div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-4">Audio Fingerprinting</h3>
-                        <p class="text-gray-600 mb-6">Improved Shazam's hash model using Level of Detail techniques for faster song identification</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="tag px-4 py-2 bg-blue-100 text-blue-600 rounded-full text-sm font-medium">Python</span>
-                            <span class="tag px-4 py-2 bg-yellow-100 text-yellow-600 rounded-full text-sm font-medium">Signal Processing</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="custom-card p-8 hover-translate">
-                    <div>
-                        <h3 class="text-xl font-bold text-gray-800 mb-4">Banking Service Architecture</h3>
-                        <p class="text-gray-600 mb-6">Designed distributed service architectures and network infrastructure for banking systems</p>
-                        <div class="flex flex-wrap gap-2">
-                            <span class="tag px-4 py-2 bg-red-100 text-red-600 rounded-full text-sm font-medium">Distributed Systems</span>
-                            <span class="tag px-4 py-2 bg-indigo-100 text-indigo-600 rounded-full text-sm font-medium">Network</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Skills Section -->
-    <section id="skills" class="py-24" style="background: linear-gradient(135deg, var(--pastel-purple) 0%, var(--pastel-pink) 100%)">
-        <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12 decorative-element">Skills</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-                <div class="custom-card p-8 text-center hover-translate skills-card">
-                    <i class="fas fa-brain text-4xl text-pink-400 mb-6 skills-icon"></i>
-                    <h3 class="text-lg font-bold text-gray-800 mb-4">Machine Learning</h3>
-                    <div class="space-y-2">
-                        <div class="text-gray-600">TensorFlow</div>
-                        <div class="w-full bg-gray-200 rounded-full h-1">
-                            <div class="skill-progress" style="width: 90%"></div>
-                        </div>
-                        <div class="text-gray-600">PyTorch</div>
-                        <div class="w-full bg-gray-200 rounded-full h-1">
-                            <div class="skill-progress" style="width: 85%"></div>
-                        </div>
-                        <div class="text-gray-600">Scikit-learn</div>
-                        <div class="w-full bg-gray-200 rounded-full h-1">
-                            <div class="skill-progress" style="width: 95%"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="custom-card p-8 text-center hover-translate skills-card">
-                    <i class="fas fa-code text-4xl text-purple-400 mb-6 skills-icon"></i>
-                    <h3 class="text-lg font-bold text-gray-800 mb-4">Programming</h3>
-                    <div class="space-y-2">
-                        <div class="text-gray-600">Python</div>
-                        <div class="w-full bg-gray-200 rounded-full h-1">
-                            <div class="skill-progress" style="width: 95%"></div>
-                        </div>
-                        <div class="text-gray-600">Java</div>
-                        <div class="w-full bg-gray-200 rounded-full h-1">
-                            <div class="skill-progress" style="width: 80%"></div>
-                        </div>
-                        <div class="text-gray-600">JavaScript</div>
-                        <div class="w-full bg-gray-200 rounded-full h-1">
-                            <div class="skill-progress" style="width: 85%"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="custom-card p-8 text-center hover-translate skills-card">
-                    <i class="fas fa-database text-4xl text-blue-400 mb-6 skills-icon"></i>
-                    <h3 class="text-lg font-bold text-gray-800 mb-4">Databases</h3>
-                    <div class="space-y-2">
-                        <div class="text-gray-600">MySQL</div>
-                        <div class="w-full bg-gray-200 rounded-full h-1">
-                            <div class="skill-progress" style="width: 90%"></div>
-                        </div>
-                        <div class="text-gray-600">PostgreSQL</div>
-                        <div class="w-full bg-gray-200 rounded-full h-1">
-                            <div class="skill-progress" style="width: 85%"></div>
-                        </div>
-                        <div class="text-gray-600">MongoDB</div>
-                        <div class="w-full bg-gray-200 rounded-full h-1">
-                            <div class="skill-progress" style="width: 80%"></div>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="custom-card p-8 text-center hover-translate skills-card">
-                    <i class="fas fa-globe text-4xl text-green-400 mb-6 skills-icon"></i>
-                    <h3 class="text-lg font-bold text-gray-800 mb-4">Web Development</h3>
-                    <div class="space-y-2">
-                        <div class="text-gray-600">React.js</div>
-                        <div class="w-full bg-gray-200 rounded-full h-1">
-                            <div class="skill-progress" style="width: 85%"></div>
-                        </div>
-                        <div class="text-gray-600">Node.js</div>
-                        <div class="w-full bg-gray-200 rounded-full h-1">
-                            <div class="skill-progress" style="width: 80%"></div>
-                        </div>
-                        <div class="text-gray-600">Django</div>
-                        <div class="w-full bg-gray-200 rounded-full h-1">
-                            <div class="skill-progress" style="width: 90%"></div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact Section with enhanced styling -->
     <section id="contact" class="py-24 background-dots">
+
         <div class="max-w-6xl mx-auto px-4">
-            <h2 class="text-3xl font-bold text-center text-gray-800 mb-12 decorative-element">Get In Touch</h2>
+
+            <h2 class="text-3xl font-bold text-center mb-12 decorative-element neon-text">Get In Touch</h2>
+
             <div class="custom-card p-8 max-w-2xl mx-auto">
+
                 <div class="flex flex-col items-center space-y-8">
+
                     <div class="flex justify-center space-x-8">
-                        <a href="https://github.com/widad17" class="contact-icon text-gray-600 hover:text-pink-400 p-4 bg-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
+
+                        <a href="https://github.com/widad17" class="contact-icon p-4 rounded-full">
+
                             <i class="fab fa-github text-3xl"></i>
+
                         </a>
-                        <a href="https://linkedin.com/in/widad-farhat" class="contact-icon text-gray-600 hover:text-pink-400 p-4 bg-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
+
+                        <a href="https://linkedin.com/in/widad-farhat" class="contact-icon p-4 rounded-full">
+
                             <i class="fab fa-linkedin text-3xl"></i>
+
                         </a>
-                        <a href="mailto:widadf@kth.se" class="contact-icon text-gray-600 hover:text-pink-400 p-4 bg-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300">
+
+                        <a href="mailto:widadf@kth.se" class="contact-icon p-4 rounded-full">
+
                             <i class="fas fa-envelope text-3xl"></i>
+
                         </a>
+
                     </div>
+
                     <div class="text-center">
-                        <p class="text-gray-600 mb-4">Feel free to reach out for collaborations or just a friendly chat!</p>
-                        <div class="inline-flex items-center space-x-2 text-pink-400">
-                            <i class="fas fa-heart text-sm sparkling"></i>
-                            <span>Looking forward to connecting with you</span>
-                            <i class="fas fa-heart text-sm sparkling"></i>
+
+                        <p class="text-text-secondary mb-4">Feel free to reach out for collaborations</p>
+
+                        <div class="inline-flex items-center space-x-2 neon-text">
+
+
                         </div>
+
                     </div>
+
                 </div>
+
             </div>
+
         </div>
+
     </section>
 
-    <!-- Footer with gradient background -->
-    <footer class="gradient-bg text-white py-12">
+
+
+    <!-- Footer -->
+
+    <footer class="gradient-bg py-12">
+
         <div class="max-w-6xl mx-auto px-4 text-center">
+
             <div class="mb-4">
-                <span class="inline-block text-2xl font-bold">✧ WF ✧</span>
+
+                <span class="inline-block text-2xl font-bold neon-text">WF</span>
+
             </div>
-            <p class="text-white mb-4">Made with <i class="fas fa-heart text-sm sparkling"></i> by Widad Farhat</p>
-            <p class="text-white opacity-75">&copy; 2024 All rights reserved.</p>
+
+            <p class="text-text-primary mb-4">Made with <i class="fas fa-heart text-sm sparkling neon-text"></i> by Widad Farhat</p>
+
+            <p class="text-text-secondary">&copy; 2024 All rights reserved.</p>
+
         </div>
+
     </footer>
 
-    <!-- Add a scroll-to-top button -->
+
+
+    <!-- Scroll to top button -->
+
     <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})" 
-            class="fixed bottom-8 right-8 bg-white p-4 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 text-pink-400 hover:text-pink-600"
+
+            class="fixed bottom-8 right-8 p-4 rounded-full transition-all duration-300"
+
             style="display: none;"
+
             id="scrollTopBtn">
+
         <i class="fas fa-arrow-up"></i>
+
     </button>
 
+
+
     <script>
-        // Show/hide scroll-to-top button based on scroll position
-        window.onscroll = function() {
-            const btn = document.getElementById('scrollTopBtn');
-            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-                btn.style.display = 'block';
-            } else {
-                btn.style.display = 'none';
-            }
-        };
 
-        // Animate skill bars on scroll
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.style.width = entry.target.getAttribute('data-width');
+        // Matrix Rain Effect
+
+        const canvas = document.getElementById('matrix');
+
+        const ctx = canvas.getContext('2d');
+
+
+
+        canvas.width = window.innerWidth;
+
+        canvas.height = window.innerHeight;
+
+
+
+        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+
+        const fontSize = 14;
+
+        const columns = canvas.width / fontSize;
+
+        const drops = Array(Math.floor(columns)).fill(1);
+
+
+
+        function drawMatrix() {
+
+            ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+
+
+            ctx.fillStyle = '#0F0';
+
+            ctx.font = `${fontSize}px monospace`;
+
+
+
+            for (let i = 0; i < drops.length; i++) {
+
+                const text = characters[Math.floor(Math.random() * characters.length)];
+
+                ctx.fillText(text, i * fontSize, drops[i] * fontSize);
+
+
+
+                if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+
+                    drops[i] = 0;
+
                 }
-            });
-        }, { threshold: 0.5 });
 
-        document.querySelectorAll('.skill-progress').forEach(bar => {
-            bar.style.width = '0';
-            observer.observe(bar);
+                drops[i]++;
+
+            }
+
+        }
+
+
+
+        setInterval(drawMatrix, 50);
+
+
+
+        // Scroll Progress
+
+        window.onscroll = () => {
+
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+
+            const scrolled = (winScroll / height) * 100;
+
+            document.getElementById('scrollProgress').style.transform = `scaleX(${scrolled / 100})`;
+
+        };
+        function handleMouseMove(event) {
+            const card = event.currentTarget;
+            const rect = card.getBoundingClientRect();
+            const x = event.clientX - rect.left;
+            const y = event.clientY - rect.top;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+            
+            const rotateX = (y - centerY) / 20;
+            const rotateY = (centerX - x) / 20;
+            
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+            card.style.transition = 'transform 0.1s ease';
+        }
+
+        function handleMouseLeave(event) {
+            const card = event.currentTarget;
+            card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)';
+            card.style.transition = 'transform 0.3s ease';
+        }
+
+
+
+        // Dynamic card rotation on mouse move
+
+        document.querySelectorAll('.dynamic-card').forEach(card => {
+
+            card.addEventListener('mousemove', e => {
+
+                const rect = card.getBoundingClientRect();
+
+                const x = e.clientX - rect.left;
+
+                const y = e.clientY - rect.top;
+
+                const centerX = rect.width / 2;
+
+                const centerY = rect.height / 2;
+
+                
+
+                const rotateX = (y - centerY) / 10;
+
+                const rotateY = (centerX - x) / 10;
+
+                
+
+                card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.05)`;
+
+            });
+
+
+
+            card.addEventListener('mouseleave', () => {
+
+                card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
+
+            });
+
         });
+
     </script>
+
 </body>
+
 </html>
