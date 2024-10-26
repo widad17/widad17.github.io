@@ -738,86 +738,170 @@
 
 
     <!-- Projects Section -->
-
-    <section id="projects" class="py-24">
-
-        <div class="max-w-6xl mx-auto px-4">
-
-            <h2 class="text-3xl font-bold text-center mb-12 decorative-element neon-text">Projects</h2>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-
-                <div class="custom-card p-8 hover-translate">
-
-                    <div>
-
-                        <h3 class="text-xl font-bold neon-text mb-4">Anime Recommendation App with Chatbot</h3>
-
-                        <p class="text-text-secondary mb-6">Developed app using content-based and collaborative filtering with OpenAI LLM chatbot integration</p>
-
-                        <div class="flex flex-wrap gap-2">
-
-                            <span class="tag">Python</span><span class="tag">ML</span>
-
-                            <span class="tag">NLP</span>
-
-                        </div>
-
+<section id="projects" class="py-24">
+    <div class="max-w-6xl mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12 decorative-element neon-text">Projects</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <!-- Anime Recommendation Project Card -->
+            <div class="custom-card p-8 dynamic-card" onmousemove="handleMouseMove(event)" onmouseleave="handleMouseLeave(event)">
+                <div class="text-center mb-6">
+                    <img 
+                        src="images\anime.png" 
+                        alt="Anime Recommendation App" 
+                        class="w-16 h-16 mb-4 mx-auto object-cover rounded-full"
+                    />
+                    <h3 class="text-2xl font-bold neon-text">Anime Recommendation App with Chatbot</h3>
+                </div>
+                <div class="space-y-4">
+                    <p class="text-text-secondary">A sophisticated recommendation system combining content-based and collaborative filtering with an OpenAI-powered chatbot for personalized anime suggestions.</p>
+                    
+                    <div class="space-y-2">
+                        <h4 class="text-neon-blue font-semibold">Key Features:</h4>
+                        <ul class="list-disc ml-6 text-text-secondary">
+                            <li>Hybrid recommendation engine</li>
+                            <li>OpenAI LLM integration</li>
+                            <li>Interactive chat interface</li>
+                            <li>Real-time suggestions</li>
+                        </ul>
                     </div>
 
-                </div>
-
-
-
-                <div class="custom-card p-8 hover-translate">
-
-                    <div>
-
-                        <h3 class="text-xl font-bold neon-text mb-4">Audio Fingerprinting</h3>
-
-                        <p class="text-text-secondary mb-6">Improved Shazam's hash model using Level of Detail techniques for faster song identification</p>
-
-                        <div class="flex flex-wrap gap-2">
-
-                            <span class="tag">Python</span>
-
-                            <span class="tag">Signal Processing</span>
-
-                        </div>
-
+                    <div class="flex flex-wrap gap-2 my-4">
+                        <span class="px-3 py-1 rounded-full bg-github-darker text-neon-purple">Python</span>
+                        <span class="px-3 py-1 rounded-full bg-github-darker text-neon-blue">ML</span>
+                        <span class="px-3 py-1 rounded-full bg-github-darker text-neon-cyan">NLP</span>
+                        <span class="px-3 py-1 rounded-full bg-github-darker text-neon-purple">OpenAI</span>
                     </div>
 
-                </div>
-
-
-
-                <div class="custom-card p-8 hover-translate">
-
-                    <div>
-
-                        <h3 class="text-xl font-bold neon-text mb-4">Banking Service Architecture</h3>
-
-                        <p class="text-text-secondary mb-6">Designed distributed service architectures and network infrastructure for banking systems</p>
-
-                        <div class="flex flex-wrap gap-2">
-
-                            <span class="tag">Distributed Systems</span>
-
-                            <span class="tag">Network</span>
-
-                        </div>
-
+                    <div class="flex justify-center space-x-4 mt-6">
+                        <a href="https://github.com/widad17/Anime-recommendation" 
+                           target="_blank" 
+                           class="flex items-center space-x-2 px-4 py-2 rounded-lg bg-github-darker hover:bg-opacity-80 transition-all">
+                            <i class="fab fa-github text-neon-purple"></i>
+                            <span class="text-neon-purple">View Code</span>
+                        </a>
+                        <a href="https://youtu.be/GGiEFc6B46M?si=aq8uB8LTheERmbqF" 
+                           class="flex items-center space-x-2 px-4 py-2 rounded-lg bg-github-darker hover:bg-opacity-80 transition-all">
+                            <i class="fas fa-external-link-alt text-neon-blue"></i>
+                            <span class="text-neon-blue">Live Demo</span>
+                        </a>
                     </div>
-
                 </div>
-
             </div>
 
+            <!-- Audio Fingerprinting Project Card -->
+            <div class="custom-card p-8 dynamic-card" onmousemove="handleMouseMove(event)" onmouseleave="handleMouseLeave(event)">
+                <div class="text-center mb-6">
+                    <img 
+                        src="images\shazam.png" 
+                        alt="Audio Fingerprinting App" 
+                        class="w-16 h-16 mb-4 mx-auto object-cover rounded-full"
+                    />
+                    <h3 class="text-2xl font-bold neon-text">Audio Fingerprinting</h3>
+                </div>
+                <div class="space-y-4">
+                    <p class="text-text-secondary">Enhanced Shazam-like audio fingerprinting system using Level of Detail techniques for optimized song identification.</p>
+                    
+                    <div class="space-y-2">
+                        <h4 class="text-neon-blue font-semibold">Key Features:</h4>
+                        <ul class="list-disc ml-6 text-text-secondary">
+                            <li>Optimized hash model</li>
+                            <li>Fast song identification</li>
+                            <li>Robust audio matching</li>
+                            <li>Scalable architecture</li>
+                        </ul>
+                    </div>
+
+                    <div class="flex flex-wrap gap-2 my-4">
+                        <span class="px-3 py-1 rounded-full bg-github-darker text-neon-purple">Python</span>
+                        <span class="px-3 py-1 rounded-full bg-github-darker text-neon-blue">Signal Processing</span>
+                        <span class="px-3 py-1 rounded-full bg-github-darker text-neon-cyan">NumPy</span>
+                    </div>
+
+                    <div class="flex justify-center space-x-4 mt-6">
+                        <a href="https://github.com/widad17/Audio-Fingerprinting" 
+                           target="_blank" 
+                           class="flex items-center space-x-2 px-4 py-2 rounded-lg bg-github-darker hover:bg-opacity-80 transition-all">
+                            <i class="fab fa-github text-neon-purple"></i>
+                            <span class="text-neon-purple">View Code</span>
+                        </a>
+                        <a href="https://www.youtube.com/watch?v=jvgQZuTMIbE" 
+                           class="flex items-center space-x-2 px-4 py-2 rounded-lg bg-github-darker hover:bg-opacity-80 transition-all">
+                            <i class="fas fa-external-link-alt text-neon-blue"></i>
+                            <span class="text-neon-blue">Live Demo</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="custom-card p-8 dynamic-card" onmousemove="handleMouseMove(event)" onmouseleave="handleMouseLeave(event)">
+                <div class="text-center mb-6">
+                    <i class="fas fa-chart-line text-4xl mb-4 text-neon-cyan"></i>
+                    <h3 class="text-2xl font-bold neon-text">PDEs By NNs</h3>
+                </div>
+                <div class="space-y-4">
+                    <p class="text-text-secondary">Implementation of Feynman-Kac method and PINNs (Physics-Informed Neural Networks) to solve the Black-Scholes PDE in different dimensions.</p>
+                   
+                    <div class="space-y-2">
+                        <h4 class="text-neon-blue font-semibold">Key Features:</h4>
+                        <ul class="list-disc ml-6 text-text-secondary">
+                            <li>Feynman-Kac method implementation</li>
+                            <li>PINNs solver integration</li>
+                            <li>Multi-dimensional PDE solutions</li>
+                            <li>Black-Scholes equation solver</li>
+                        </ul>
+                    </div>
+                    <div class="flex flex-wrap gap-2 my-4">
+                        <span class="px-3 py-1 rounded-full bg-github-darker text-neon-purple">Python</span>
+                        <span class="px-3 py-1 rounded-full bg-github-darker text-neon-blue">Neural Networks</span>
+                        <span class="px-3 py-1 rounded-full bg-github-darker text-neon-cyan">Financial Mathematics</span>
+                    </div>
+                    <div class="flex justify-center space-x-4 mt-6">
+                        <a href="https://github.com/widad17/PDEs-in-finance-.git"
+                           target="_blank"
+                           class="flex items-center space-x-2 px-4 py-2 rounded-lg bg-github-darker hover:bg-opacity-80 transition-all">
+                            <i class="fab fa-github text-neon-purple"></i>
+                            <span class="text-neon-purple">View Code</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <!-- Banking Service Architecture Card -->
+            <div class="custom-card p-8 dynamic-card" onmousemove="handleMouseMove(event)" onmouseleave="handleMouseLeave(event)">
+                <div class="text-center mb-6">
+                    <i class="fas fa-university text-4xl mb-4 text-neon-cyan"></i>
+                    <h3 class="text-2xl font-bold neon-text">Banking Service Architecture</h3>
+                </div>
+                <div class="space-y-4">
+                    <p class="text-text-secondary">Comprehensive distributed service architecture design for modern banking systems with focus on security and scalability.</p>
+                    
+                    <div class="space-y-2">
+                        <h4 class="text-neon-blue font-semibold">Key Features:</h4>
+                        <ul class="list-disc ml-6 text-text-secondary">
+                            <li>Microservices architecture</li>
+                            <li>Secure transaction handling</li>
+                            <li>Load balancing</li>
+                            <li>Fault tolerance</li>
+                        </ul>
+                    </div>
+
+                    <div class="flex flex-wrap gap-2 my-4">
+                        <span class="px-3 py-1 rounded-full bg-github-darker text-neon-purple">Distributed Systems</span>
+                        <span class="px-3 py-1 rounded-full bg-github-darker text-neon-blue">Network</span>
+                        <span class="px-3 py-1 rounded-full bg-github-darker text-neon-cyan">Security</span>
+                    </div>
+
+                    <div class="flex justify-center space-x-4 mt-6">
+                        <a href="https://github.com/yourusername/banking-architecture" 
+                           target="_blank" 
+                           class="flex items-center space-x-2 px-4 py-2 rounded-lg bg-github-darker hover:bg-opacity-80 transition-all">
+                            <i class="fab fa-github text-neon-purple"></i>
+                            <span class="text-neon-purple">View Code</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
         </div>
-
-    </section>
-
-
+    </div>
+</section>
 
 <!-- Skills Section -->
 <section id="skills" class="py-24">
